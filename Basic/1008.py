@@ -1,4 +1,4 @@
-l, n = [int(i) for i in raw_input().split()]
-num_list = [int(i) for i in raw_input().split()] * 2
-for i in range(l - n, 2 * l - n):
-    print num_list[i],
+n, m = [int(i) for i in raw_input().split()]
+nums = [int(i) for i in raw_input().split()]
+for i in xrange(- m, n - m):
+    print nums[i % n],
