@@ -1,23 +1,12 @@
-prime_list = []
+def list_primes(the_range):
+    p = [True] * (the_range + 1)
+    for i in xrange(2, int(the_range ** 0.5) + 1):
+        if p[i]:
+            p[i + i::i] = [False] * (the_range / i - 1)
+    return [i for i in xrange(2, the_range + 1) if p[i]]
 
 
-def is_prime(n):
-    for i in prime_list:
-        if n % i == 0:
-            return False
-        if i * i > n:
-            break
-    return True
-
-
-for i in range(2, 100000):
-    if is_prime(i):
-        prime_list.append(i)
 n = int(raw_input())
-count = 0
-for i in range(len(prime_list) - 1):
-    if prime_list[i + 1] > n:
-        break
-    elif prime_list[i + 1] - prime_list[i] == 2:
-        count += 1
-print count
+primes = set(list_primes(n))
+prime_pairs = [(i, i + 2) for i in primes if i + 2 in primes]
+print len(prime_pairs)
