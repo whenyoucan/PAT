@@ -1,2 +1,2 @@
-num_list = [int(i) for i in '00' + raw_input()]
-print 'B' * num_list[-3] + 'S' * num_list[-2] + ''.join(map(str, range(1, num_list[-1] + 1, 1)))
+nums = [int(i) for i in '{:0>3}'.format(raw_input())]
+print ''.join(['B' * nums[0], 'S' * nums[1], '123456789'[:nums[2]]])
