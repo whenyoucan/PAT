@@ -1,36 +1,12 @@
 nums = [int(i) for i in raw_input().split()][1:]
-flags = [False] * 5
-a = [0] * 5
-a1_flag = True
-a3_count = 0
-for n in nums:
-    if n % 10 == 0:
-        flags[0] = True
-        a[0] += n
-    if n % 5 == 1:
-        flags[1] = True
-        if a1_flag:
-            a[1] += n
-        else:
-            a[1] -= n
-        a1_flag = not a1_flag
-    if n % 5 == 2:
-        flags[2] = True
-        a[2] += 1
-    if n % 5 == 3:
-        flags[3] = True
-        a[3] += n
-        a3_count += 1
-    if n % 5 == 4 and n > a[4]:
-        flags[4] = True
-        a[4] = n
-if flags[3]:
-    a[3] = a[3] * 1.0 / a3_count
-for i in range(5):
-    if not flags[i]:
-        print 'N',
-    else:
-        if i == 3:
-            print "%.1f" % a[3],
-        else:
-            print a[i],
+a_1_nums = filter(lambda x: x % 5 == 0 and x % 2 == 0, nums)
+a_2_nums = filter(lambda x: x % 5 == 1, nums)
+a_3_nums = filter(lambda x: x % 5 == 2, nums)
+a_4_nums = filter(lambda x: x % 5 == 3, nums)
+a_5_nums = filter(lambda x: x % 5 == 4, nums)
+a_1 = 'N' if a_1_nums == [] else sum(a_1_nums)
+a_2 = 'N' if a_2_nums == [] else sum([x[0] * x[1] for x in zip(a_2_nums, [1, -1] * len(a_2_nums))])
+a_3 = 'N' if a_3_nums == [] else len(a_3_nums)
+a_4 = 'N' if a_4_nums == [] else '{:.1f}'.format(sum(a_4_nums) * 1.0 / len(a_4_nums))
+a_5 = 'N' if a_5_nums == [] else max(a_5_nums)
+print '{} {} {} {} {}'.format(a_1, a_2, a_3, a_4, a_5)
