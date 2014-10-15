@@ -2,8 +2,8 @@ import sys
 
 n = int(raw_input())
 record = [0, 0, 0]
-a_wins = [0, 0, 0]
-b_wins = [0, 0, 0]
+a_wins = {'B': 0, 'C': 0, 'J': 0}
+b_wins = {'B': 0, 'C': 0, 'J': 0}
 
 
 def draw():
@@ -12,32 +12,32 @@ def draw():
 
 def c_j():
     record[0] += 1
-    a_wins[1] += 1
+    a_wins['C'] += 1
 
 
 def j_b():
     record[0] += 1
-    a_wins[2] += 1
+    a_wins['J'] += 1
 
 
 def b_c():
     record[0] += 1
-    a_wins[0] += 1
+    a_wins['B'] += 1
 
 
 def j_c():
     record[2] += 1
-    b_wins[1] += 1
+    b_wins['C'] += 1
 
 
 def b_j():
     record[2] += 1
-    b_wins[2] += 1
+    b_wins['J'] += 1
 
 
 def c_b():
     record[2] += 1
-    b_wins[0] += 1
+    b_wins['B'] += 1
 
 
 functions = {
@@ -57,15 +57,5 @@ for r in records:
     functions[r]()
 print record[0], record[1], record[2]
 print record[2], record[1], record[0]
-if a_wins[0] == max(a_wins):
-    print 'B',
-elif a_wins[1] == max(a_wins):
-    print 'C',
-else:
-    print 'J',
-if b_wins[0] == max(b_wins):
-    print 'B',
-elif b_wins[1] == max(b_wins):
-    print 'C',
-else:
-    print 'J',
+print sorted(a_wins.items(), key=lambda x: (-x[1], x[0]))[0][0],
+print sorted(b_wins.items(), key=lambda x: (-x[1], x[0]))[0][0],
