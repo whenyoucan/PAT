@@ -1,4 +1,3 @@
 n = raw_input()
-for i in xrange(10):
-    if n.count(str(i)):
-        print "%d:%d" % (i, n.count(str(i)))
+digit_counts = [(d, n.count(str(d))) for d in xrange(10) if n.count(str(d))]
+print '\n'.join(['{}:{}'.format(x[0], x[1]) for x in digit_counts])
