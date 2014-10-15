@@ -56,8 +56,7 @@ records = sys.stdin.read(n * 4).split('\n')[:-1]
 for r in records:
     functions[r]()
 print record[0], record[1], record[2]
-record = record[::-1]
-print record[0], record[1], record[2]
+print record[2], record[1], record[0]
 if a_wins[0] == max(a_wins):
     print 'B',
 elif a_wins[1] == max(a_wins):
