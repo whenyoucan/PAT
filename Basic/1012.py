@@ -9,4 +9,4 @@ a_2 = 'N' if not a_2_nums else sum([x[0] * x[1] for x in zip(a_2_nums, [1, -1] *
 a_3 = 'N' if not a_3_nums else len(a_3_nums)
 a_4 = 'N' if not a_4_nums else '{:.1f}'.format(sum(a_4_nums) * 1.0 / len(a_4_nums))
 a_5 = 'N' if not a_5_nums else max(a_5_nums)
-print '{} {} {} {} {}'.format(a_1, a_2, a_3, a_4, a_5)
+print ' '.join([str(i) for i in [a_1, a_2, a_3, a_4, a_5]])
