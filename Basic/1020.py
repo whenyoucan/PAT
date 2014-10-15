@@ -15,4 +15,4 @@ for i in xrange(n):
     else:
         cur_price += (d - cur_d) * cake['unit_price']
         break
-print "%.2f" % cur_price
+print '{:.2f}'.format(cur_price)
