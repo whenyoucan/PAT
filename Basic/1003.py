@@ -3,13 +3,13 @@ import re
 
 def is_good_str(the_str):
     m = re.match(r'(A*)P(A*)T(A*)$', the_str)
-    if m is None:
-        return False
-    else:
+    if m:
         a = m.group(1)
         b = m.group(2)
         c = m.group(3)
-    return is_good_abc(len(a), len(b), len(c))
+        return is_good_abc(len(a), len(b), len(c))
+    else:
+        return False
 
 
 def is_good_abc(a, b, c):
