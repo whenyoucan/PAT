@@ -1,3 +1,4 @@
+# coding=utf-8
 import sys
 
 n = int(raw_input())
@@ -52,9 +53,9 @@ functions = {
     'B J': b_j
 }
 
-records = sys.stdin.read(n * 4).split('\n')[:-1]
+records = sys.stdin.read(n * 4).split('\n')[:-1]  # 用raw_input会超时
 for r in records:
-    functions[r]()
+    functions[r]()  # 直接将字符串映射到函数，否则if太多会超时
 print a_record['win'], a_record['draw'], a_record['lose']
 print a_record['lose'], a_record['draw'], a_record['win']
 print sorted(a_wins.items(), key=lambda x: (-x[1], x[0]))[0][0],
