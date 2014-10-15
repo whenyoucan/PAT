@@ -1,42 +1,42 @@
 import sys
 
 n = int(raw_input())
-record = [0, 0, 0]
+a_record = {'win': 0, 'draw': 0, 'lose': 0}
 a_wins = {'B': 0, 'C': 0, 'J': 0}
 b_wins = {'B': 0, 'C': 0, 'J': 0}
 
 
 def draw():
-    record[1] += 1
+    a_record['draw'] += 1
 
 
 def c_j():
-    record[0] += 1
+    a_record['win'] += 1
     a_wins['C'] += 1
 
 
 def j_b():
-    record[0] += 1
+    a_record['win'] += 1
     a_wins['J'] += 1
 
 
 def b_c():
-    record[0] += 1
+    a_record['win'] += 1
     a_wins['B'] += 1
 
 
 def j_c():
-    record[2] += 1
+    a_record['lose'] += 1
     b_wins['C'] += 1
 
 
 def b_j():
-    record[2] += 1
+    a_record['lose'] += 1
     b_wins['J'] += 1
 
 
 def c_b():
-    record[2] += 1
+    a_record['lose'] += 1
     b_wins['B'] += 1
 
 
@@ -55,7 +55,7 @@ functions = {
 records = sys.stdin.read(n * 4).split('\n')[:-1]
 for r in records:
     functions[r]()
-print record[0], record[1], record[2]
-print record[2], record[1], record[0]
+print a_record['win'], a_record['draw'], a_record['lose']
+print a_record['lose'], a_record['draw'], a_record['win']
 print sorted(a_wins.items(), key=lambda x: (-x[1], x[0]))[0][0],
 print sorted(b_wins.items(), key=lambda x: (-x[1], x[0]))[0][0],
