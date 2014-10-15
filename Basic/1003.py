@@ -2,9 +2,13 @@ import re
 
 
 def is_good_str(the_str):
-    if re.match(r'A*PA*TA*$', the_str) is None:
+    m = re.match(r'(A*)P(A*)T(A*)$', the_str)
+    if m is None:
         return False
-    a, b, c = re.split('[PT]', the_str)
+    else:
+        a = m.group(1)
+        b = m.group(2)
+        c = m.group(3)
     return is_good_abc(len(a), len(b), len(c))
 
 
