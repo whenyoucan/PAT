@@ -1,3 +1,5 @@
+# coding=utf-8
+# 此题会有case超时
 n, l, h = [int(i) for i in raw_input().split()]
 sr, jz, yr, xr = [], [], [], []
 for i in xrange(n):

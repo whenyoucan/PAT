@@ -1,3 +1,5 @@
+# coding=utf-8
+# 此题会有case超时
 cur_addr, n, k = [int(i) for i in raw_input().split()]
 d = {}
 for i in xrange(int(n)):
