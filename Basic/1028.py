@@ -5,8 +5,7 @@ oldest_name = ''
 oldest_birthday = valid_birthday_max
 youngest_name = ''
 youngest_birthday = valid_birthday_min
-N = int(raw_input())
-for i in xrange(N):
+for i in xrange(int(raw_input())):
     name, birthday = raw_input().split()
     if valid_birthday_min <= birthday <= valid_birthday_max:
         valid_birthday_num += 1
