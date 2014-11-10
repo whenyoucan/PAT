@@ -1,8 +1,4 @@
-n = int(raw_input())
-students = []
-for i in xrange(n):
-    students.append(raw_input().split())
-students.sort(key=lambda x: x[1])
-print students[0][0],
-students.sort(key=lambda x: x[2])
-print students[-1][0]
+n = input()
+records = [raw_input().split() for i in xrange(n)]
+print sorted(records, key=lambda x: x[1])[0][0],
+print sorted(records, key=lambda x: x[2])[-1][0]
