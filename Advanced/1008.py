@@ -1,9 +1,10 @@
 floors = [int(i) for i in raw_input().split()[1:]]
-time, cur_floor = 0, 0
-for f in floors:
-    if f > cur_floor:
-        time += (f - cur_floor) * 6 + 5
+cur_floor = 0
+total_time = 0
+for floor in floors:
+    if floor > cur_floor:
+        total_time += (floor - cur_floor) * 6 + 5
     else:
-        time += (cur_floor - f) * 4 + 5
-    cur_floor = f
-print time
+        total_time += (cur_floor - floor) * 4 + 5
+    cur_floor = floor
+print total_time
