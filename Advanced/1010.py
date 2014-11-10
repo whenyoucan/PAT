@@ -16,20 +16,20 @@ def base_index(num_str):
     return (string.digits + string.lowercase).index(max_char)
 
 
-def try_radix(num_str, known_value, min_radix, max_radix):
+def try_radix(num_str, target_value, min_radix, max_radix):
     if min_radix == max_radix:
         try_value = convert(num_str, min_radix)
-        if try_value == known_value:
+        if try_value == target_value:
             return min_radix
         else:
             return False
     else:
         mid_radix = (min_radix + max_radix) / 2
         try_value = convert(num_str, mid_radix)
-        if try_value >= known_value:
-            return try_radix(num_str, known_value, min_radix, mid_radix)
+        if try_value >= target_value:
+            return try_radix(num_str, target_value, min_radix, mid_radix)
         else:
-            return try_radix(num_str, known_value, mid_radix + 1, max_radix)
+            return try_radix(num_str, target_value, mid_radix + 1, max_radix)
 
 
 args = raw_input().split()
