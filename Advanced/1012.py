@@ -22,12 +22,10 @@ for course in ['A', 'C', 'M', 'E']:
         if rank < students[i]['best_rank']:
             students[i]['best_rank'] = rank
             students[i]['best_course'] = course
-students_dict = {}
-for s in students:
-    students_dict[s['id']] = s
+students = {s['id']: s for s in students}
 for i in xrange(m):
     student_id = raw_input()
-    if student_id in students_dict:
-        print students_dict[student_id]['best_rank'], students_dict[student_id]['best_course']
+    if student_id in students:
+        print students[student_id]['best_rank'], students[student_id]['best_course']
     else:
         print 'N/A'
