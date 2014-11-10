@@ -1,7 +1,7 @@
 # coding=utf-8
 import sys
 
-n = int(raw_input())
+n = input()
 a_record = {'win': 0, 'draw': 0, 'lose': 0}
 a_wins = {'B': 0, 'C': 0, 'J': 0}
 b_wins = {'B': 0, 'C': 0, 'J': 0}

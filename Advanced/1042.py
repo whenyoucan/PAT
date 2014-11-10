@@ -1,4 +1,4 @@
-repeat = int(raw_input())
+repeat = input()
 cards = [c + str(n) for c in ['S', 'H', 'C', 'D'] for n in xrange(1, 14)] + ['J1', 'J2']
 orders = [int(i) for i in raw_input().split()]
 for r in xrange(repeat):

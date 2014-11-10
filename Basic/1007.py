@@ -6,7 +6,7 @@ def list_primes(the_range):
     return [i for i in xrange(2, the_range + 1) if p[i]]
 
 
-n = int(raw_input())
+n = input()
 primes = set(list_primes(n))
 prime_pairs = [(i, i + 2) for i in primes if i + 2 in primes]
 print len(prime_pairs)

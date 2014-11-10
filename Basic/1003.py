@@ -21,7 +21,7 @@ def is_good_abc(a, b, c):
         return is_good_abc(a, b - 1, c - a)
 
 
-for i in xrange(int(raw_input())):
+for i in xrange(input()):
     if is_good_str(raw_input()):
         print 'YES'
     else:

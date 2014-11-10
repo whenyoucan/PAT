@@ -13,7 +13,7 @@ for i in xrange(n):
             vips[id_num] += k
         else:
             vips[id_num] += distance
-m = int(raw_input())
+m = input()
 for i in xrange(m):
     query_id = raw_input()
     if query_id in vips:

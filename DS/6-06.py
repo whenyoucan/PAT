@@ -1,4 +1,4 @@
-n = int(raw_input())
+n = input()
 depends = [[]] * n
 for i in xrange(n):
     depends[i] = [int(j) - 1 for j in map(int, raw_input().split())[1:]]

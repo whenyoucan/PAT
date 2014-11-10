@@ -26,7 +26,7 @@ def print_post_order(tree):
         print tree['value'],
 
 
-N = int(raw_input())
+N = input()
 pre_order = []
 in_order = []
 post_order = []

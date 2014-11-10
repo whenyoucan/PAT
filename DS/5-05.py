@@ -1,4 +1,4 @@
-n = int(raw_input())
+n = input()
 existing_qq_nums = {}
 for i in xrange(n):
     cmd = raw_input().split()

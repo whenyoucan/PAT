@@ -7,7 +7,7 @@ def common_tail(x, y):
     return result[::-1]
 
 
-n = int(raw_input())
+n = input()
 lines = [raw_input() for i in xrange(n)]
 lines.sort(key=lambda x: len(x))
 kuchiguse = reduce(common_tail, lines)

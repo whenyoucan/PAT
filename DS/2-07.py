@@ -1,4 +1,4 @@
-n = int(raw_input())
+n = input()
 root = 2
 flag = False
 result = '%d=' % n
