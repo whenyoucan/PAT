@@ -1,2 +1,2 @@
-sum_num = sum([int(i) for i in raw_input().split()])
-print '{:,}'.format(sum_num)
+the_sum = sum([int(i) for i in raw_input().split()])
+print '{:,}'.format(the_sum)
