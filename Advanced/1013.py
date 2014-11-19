@@ -3,7 +3,7 @@ class DisjointSet:
     def __init__(self, size):
         self.set = [-1 for i in xrange(size)]
 
-    def union_root(self, root1, root2):  # by tree size
+    def union_root(self, root1, root2):  # 根据大小合并
         if root1 == root2:
             return
         union_size = self.set[root1] + self.set[root2]
@@ -32,7 +32,7 @@ class DisjointSet:
 N, M, K = [int(i) for i in raw_input().split()]
 roads = set()
 for i in xrange(M):
-    source, target = [int(i) - 1 for i in raw_input().split()]
+    source, target = [int(i) - 1 for i in raw_input().split()]  # 最后一个case里 M>45万，还没读取完就超时
     if source > target:
         source, target = target, source
     roads.add((source, target))
