@@ -41,12 +41,12 @@ for i in xrange(n * (n - 1) / 2):
         v.union(x, y)
     else:
         e.append((x, y, cost))
-e.sort(key=lambda x: x[2])
-for i in e:
+
+for x, y, cost in sorted(e, key=lambda x: x[2]):
     if v.count() == 1:
         break
-    x, y, cost = i
     if v.find(x) != v.find(y):
         v.union(x, y)
         total_cost += cost
+
 print total_cost
