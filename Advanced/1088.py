@@ -56,7 +56,7 @@ def expr(frac):
         rest = abs_value - k
         expression = '{} {}'.format(k, rest) if rest else k
     else:
-        expression = str(abs_value)
+        expression = '{}'.format(abs_value)
     if frac < 0:
         expression = '(-{})'.format(expression)
     return expression
